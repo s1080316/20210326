@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() ,
                 txv.text = counter.toString()
             }
         })
+
+        img.setOnLongClickListener(this)
     }
 
     fun Add(v:View){
@@ -52,7 +54,12 @@ class MainActivity : AppCompatActivity() ,
     }
 
     override fun onLongClick(v: View?): Boolean {
-        counter += 2
+        if(v==txv){
+            counter += 2
+        }
+        else{
+            counter--
+        }
         txv.text=counter.toString()
         return true
     }
